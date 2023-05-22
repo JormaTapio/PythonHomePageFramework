@@ -1,0 +1,24 @@
+# This is something what I am planned to do next
+MainPage.robot -file in  PythonPOM -folder
+*** Test Cases ***
+Vincint - Testing Dataclass
+    [documentation]  Ready to Testing Dataclass
+    [tags]  Regressio  
+    Go To Python Page 
+    Select Python Version  ${pythonVersionLnk}
+    Sleep    3
+    #Select All Python Versions  @{pythonVersionWebElement}
+
+*** Keyword ***
+Select All Python Versions
+    [Arguments]    @{list}
+    #${indexTemp}  0
+    FOR    ${item}    IN    @{list} 
+    ${first_object}  @{list}[0]
+    Log    First Object:  ${first_object}
+    Log To Console  ${item}
+    Log To Console  ${indexTemp}
+    ${indexTemp}  ${indexTemp}+1
+    ##Click Element  ${item}
+    Sleep  1
+    END
